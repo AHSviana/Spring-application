@@ -4,9 +4,7 @@ import com.example.demo.DTO.GameMinDTO;
 import com.example.demo.entities.Game;
 import com.example.demo.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,6 +23,18 @@ public class GameController {
          return result;
     }
 
+    @GetMapping
+    @RequestMapping("/{id}")
+    public GameMinDTO findById(@PathVariable Long id)
+    {
+        return gameService.findById(id);
+    }
 
+    @PostMapping
+    @RequestMapping("/games/newgame")
+    public Game postGame(Game game)
+    {
+        return gameService.postGame(game);
+    }
 
 }

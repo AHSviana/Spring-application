@@ -21,5 +21,15 @@ public class GameService {
         return dto;
     }
 
+     public GameMinDTO findById(Long id)
+    {
+       Game game = gameRepository.findById(id).get();
+       GameMinDTO gameDTO = new GameMinDTO(game);
+       return gameDTO;
+    }
 
+    public Game postGame(Game game)
+    {
+        return gameRepository.save(game);
+    }
 }
