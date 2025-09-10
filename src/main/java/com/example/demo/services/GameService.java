@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import com.example.demo.DTO.GameDTO;
 import com.example.demo.DTO.GameMinDTO;
 import com.example.demo.entities.Game;
 import com.example.demo.repositories.GameRepository;
@@ -21,11 +22,11 @@ public class GameService {
         return dto;
     }
 
-     public GameMinDTO findById(Long id)
+     public GameDTO findById(Long id)
     {
        Game game = gameRepository.findById(id).get();
-       GameMinDTO gameDTO = new GameMinDTO(game);
-       return gameDTO;
+       GameDTO dto = new GameDTO(game);
+       return dto;
     }
 
     public Game postGame(Game game)
