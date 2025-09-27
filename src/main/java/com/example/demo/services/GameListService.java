@@ -1,8 +1,6 @@
 package com.example.demo.services;
 
 import com.example.demo.DTO.GameListDTO;
-import com.example.demo.DTO.GameMinDTO;
-import com.example.demo.entities.Game;
 import com.example.demo.entities.GameList;
 import com.example.demo.repositories.GameListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
